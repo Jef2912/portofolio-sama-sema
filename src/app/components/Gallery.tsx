@@ -85,7 +85,7 @@ export function Gallery() {
               className={`group relative rounded-2xl overflow-hidden cursor-pointer ${img.span}`}
             >
               <img
-                src={img.src}
+                src={`${import.meta.env.BASE_URL}${img.src}`}
                 alt={img.label}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

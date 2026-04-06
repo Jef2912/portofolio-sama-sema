@@ -1,7 +1,7 @@
 import { ArrowRight, Play } from "lucide-react";
 import { useState } from "react";
 
-const heroImg = "Desktop - 6.png";
+const heroImg = `${import.meta.env.BASE_URL}Desktop - 6.png`;
 
 const stats = [
   { value: "500+", label: "Events Covered" },
@@ -25,7 +25,7 @@ export function Hero() {
       <div
         className="absolute inset-0 opacity-30 pointer-events-none scale-125"
         style={{
-          backgroundImage: `url("Desktop - 6.png")`,
+          backgroundImage: `url("${import.meta.env.BASE_URL}Desktop - 6.png")`,
         }}
       />
 

@@ -43,7 +43,7 @@ export function Services() {
   return (
     //bg inti
     <section id="services" className="min-h-screen w-full py-28 flex flex-col justify-center relative overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('Desktop - 8.png')" }}>
+      style={{ backgroundImage: `url('${import.meta.env.BASE_URL}Desktop - 8.png')` }}>
       {/* Top transition from white Hero */}
       <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#ffffff] to-transparent pointer-events-none z-0" />
 
