@@ -52,7 +52,7 @@ export function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 w-16 h-16 object-contain">
           <img
-            src="logo.svg"
+            src={`${import.meta.env.BASE_URL}Senyum.png`}
             alt="Logo"
           />
         </a>
