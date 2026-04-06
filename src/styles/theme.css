@@ -178,4 +178,14 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+
+  /* Hide scrollbars globally */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
