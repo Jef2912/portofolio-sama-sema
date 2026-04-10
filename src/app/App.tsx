@@ -8,6 +8,7 @@ import { Testimonials } from "./components/Testimonials";
 import { FAQ1 } from "../components/ui/faq-monochrome";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <Contact />
       <FAQ1 />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
