@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { Send, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+
+const WA_NUMBER = "62895338381625";
+const WA_MESSAGE = encodeURIComponent("Halo SamaSema! Saya tertarik untuk memesan buku tahunan. Boleh saya tanya lebih lanjut? 😊");
+const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -99,6 +103,34 @@ export function Contact() {
                 );
               })}
             </div>
+
+            {/* WhatsApp CTA */}
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-10 inline-flex items-center gap-3 px-7 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              style={{
+                background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "15px",
+                color: "#ffffff",
+                fontWeight: 600,
+                boxShadow: "0 8px 32px rgba(37, 211, 102, 0.35)",
+                textDecoration: "none",
+                display: "inline-flex",
+              }}
+            >
+              <MessageCircle size={20} className="transition-transform duration-300 group-hover:rotate-12" />
+              Chat via WhatsApp
+              <span style={{
+                fontSize: "12px",
+                background: "rgba(255,255,255,0.2)",
+                borderRadius: "999px",
+                padding: "2px 8px",
+                fontWeight: 400,
+              }}>Online</span>
+            </a>
           </div>
 
           {/* Right: form */}
@@ -217,14 +249,35 @@ export function Contact() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="group w-full py-4 rounded-full bg-gradient-to-r from-[#FFD60A] to-[#1D4ED8] hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3"
-                  style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#0d0d0d", fontWeight: 600 }}
-                >
-                  Send Enquiry
-                  <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    type="submit"
+                    className="group flex-1 py-4 rounded-full bg-gradient-to-r from-[#FFD60A] to-[#1D4ED8] hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3"
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#0d0d0d", fontWeight: 600 }}
+                  >
+                    Send Enquiry
+                    <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+
+                  <a
+                    href={WA_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex-1 py-4 rounded-full hover:opacity-90 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
+                    style={{
+                      background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)",
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "15px",
+                      color: "#ffffff",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                      boxShadow: "0 4px 20px rgba(37, 211, 102, 0.3)",
+                    }}
+                  >
+                    <MessageCircle size={16} className="transition-transform duration-300 group-hover:rotate-12" />
+                    WhatsApp
+                  </a>
+                </div>
               </form>
             )}
           </div>
