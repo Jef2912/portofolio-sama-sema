@@ -29,12 +29,12 @@ export function Hero() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div>
+      <div className="relative max-w-4xl mx-auto px-6 pt-32 pb-20 w-full">
+        <div className="flex flex-col items-center text-center">
+          {/* Content */}
+          <div className="w-full">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FFD60A]/30 bg-[#FFD60A]/8 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FFD60A]/30 bg-[#FFD60A]/8 mb-8 mx-auto">
               <span className="w-2 h-2 rounded-full bg-[#FFFFFF] animate-pulse" />
               <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#000000", fontWeight: 500, letterSpacing: "0.08em" }}>
                 NOW BOOKING FOR 2026
@@ -62,6 +62,7 @@ export function Hero() {
                   backgroundClip: "text",
                 }}
               >
+                <br />
                 but the memories?
               </span>
               <br />
@@ -71,13 +72,13 @@ export function Hero() {
             {/* Subtext */}
             <p
               style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "18px", color: "#9a9488", lineHeight: 1.7 }}
-              className="mt-6 max-w-md"
+              className="mt-6 max-w-2xl mx-auto"
             >
-              Buku tahunan premium dengan desain fresh & kekinian. Tim profesional yang siap mewujudkan kenangan angkatanmu jadi karya yang layak dikenang selamanya. 
+              Buku tahunan premium dengan desain fresh & kekinian. Tim profesional yang siap mewujudkan kenangan angkatanmu jadi karya yang layak dikenang selamanya.
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="flex flex-wrap gap-4 mt-10 justify-center">
               <a
                 href="#contact"
                 className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-to-r from-[#FFD60A] to-[#FFD60A] hover:opacity-90 transition-all duration-300 hover:gap-4"
@@ -99,7 +100,7 @@ export function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 pt-14 border-t border-[#2a2820]">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 pt-14 border-t border-[#2a2820] w-full">
               {stats.map((s) => (
                 <div key={s.label}>
                   <div
@@ -120,46 +121,6 @@ export function Hero() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Right: image collage */}
-          <div className="relative lg:h-[600px] h-[400px]">
-            {/* Main image */}
-            <div className="absolute right-0 top-0 w-[85%] h-[90%] rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={heroImg}
-                alt="Photo booth event"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/50 via-transparent to-transparent" />
-            </div>
-
-            {/* Floating card: polaroid */}
-            <div className="absolute left-0 bottom-0 w-44 bg-[#FFD60A] p-3 shadow-2xl rounded-xl rotate-[-6deg]">
-              <div className="w-full h-32 bg-gradient-to-br from-[#f5c97a]/30 to-[#e8804e]/30 rounded-md mb-3 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1735925138868-1373cb23ddb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjBsYXVnaGluZyUyMHBob3RvJTIwc3RyaXAlMjBwb2xhcm9pZHxlbnwxfHx8fDE3NzI0NjU3NTN8MA&ixlib=rb-4.1.0&q=80&w=400"
-                  alt="polaroid"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "12px", color: "#2a2820", fontStyle: "italic" }}>
-                UWO GANTENG '25
-              </p>
-            </div>
-
-            {/* Floating card: instant print badge */}
-            <div className="absolute right-4 bottom-8 bg-[#1a1914]/90 backdrop-blur-md border border-[#3a3830] rounded-2xl px-4 py-3 shadow-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#1D4ED8] to-[#FFD60A] flex items-center justify-center flex-shrink-0">
-                  <span style={{ fontSize: "16px" }}>📸</span>
-                </div>
-                <div>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#f5f0e8", fontWeight: 600 }}>Instant Print</p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#6a6560" }}>Ready in 10 seconds</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -4,32 +4,32 @@ const images = [
 
   {
     src: "POH01595.jpg",
-    label: "Wedding Reception",
+    label: "SamaSema Groups",
     span: "lg:col-span-2 lg:row-span-2",
   },
   {
     src: "POH01105.jpg",
-    label: "Corporate Event",
+    label: "SamaSema Groups",
     span: "",
   },
   {
     src: "POH01231.jpg",
-    label: "Birthday Bash",
+    label: "SamaSema Groups",
     span: "",
   },
   {
     src: "POH01416.jpg",
-    label: "Friend Groups",
+    label: "SamaSema Groups",
     span: "",
   },
   {
     src: "POH01324.jpg",
-    label: "Studio Setup",
+    label: "SamaSema Groups",
     span: "",
   },
   {
     src: "POH01151.jpg",
-    label: "Polaroid Moments",
+    label: "SamaSema Groups",
     span: "",
   },
 ];
