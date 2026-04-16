@@ -48,18 +48,18 @@ const palettes = {
     overlay: "linear-gradient(130deg, rgba(255,255,255,0.04) 0%, transparent 65%)",
   },
   light: {
-    surface: "bg-[#FFD60A] text-neutral-900",
-    panel: "bg-white/70",
-    border: "border-neutral-200",
-    heading: "text-[#1D4ED8]",
-    muted: "text-neutral-700",
-    iconRing: "border-[#1D4ED8]",
-    iconSurface: "bg-white",
+    surface: "bg-gradient-to-b from-[#1D4ED8] via-[#1D4ED8] to-[#FFD60A] text-white",
+    panel: "bg-white/10",
+    border: "border-white/20",
+    heading: "text-[#FFD60A]",
+    muted: "text-blue-100",
+    iconRing: "border-[#FFD60A]",
+    iconSurface: "bg-[#FFD60A]",
     icon: "text-[#1D4ED8]",
     toggle: "border-neutral-200 text-neutral-900",
     toggleSurface: "bg-white",
-    glow: "rgba(15, 15, 15, 0.08)",
-    aurora: "radial-gradient(ellipse 50% 100% at 10% 0%, rgba(15, 23, 42, 0.08), rgba(255, 255, 255, 0.95) 70%)",
+    glow: "rgba(255, 255, 255, 0.08)",
+    aurora: "radial-gradient(ellipse 50% 100% at 10% 0%, rgba(255, 214, 10, 0.15), transparent 70%)",
     shadow: "shadow-[0_36px_120px_-70px_rgba(15,15,15,0.18)]",
     overlay: "linear-gradient(130deg, rgba(15,23,42,0.08) 0%, transparent 70%)",
   },
@@ -67,13 +67,7 @@ const palettes = {
 
 export function FAQ1() {
   const getRootTheme = () => {
-    if (typeof document === "undefined") return "dark";
-    if (document.documentElement.classList.contains("dark")) return "dark";
-    if (document.documentElement.classList.contains("light")) return "light";
-    if (typeof window !== "undefined" && window.matchMedia) {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    }
-    return "light";
+    return "light"; // Force light theme to always use the customized yellow gradient
   };
 
   const [theme, setTheme] = useState(getRootTheme);
@@ -136,10 +130,11 @@ export function FAQ1() {
         isolation: isolate;
       }
       .faq1-intro--light {
-        border-color: rgba(17, 17, 17, 0.12);
-        background: rgba(248, 250, 252, 0.88);
-        color: rgba(15, 23, 42, 0.78);
-        mix-blend-mode: multiply;
+        border-color: rgba(59, 130, 246, 0.6);
+        background: rgba(29, 78, 216, 0.35);
+        color: #ffffff;
+        mix-blend-mode: normal;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
       }
       .faq1-intro--active {
         opacity: 1;
@@ -159,7 +154,7 @@ export function FAQ1() {
         opacity: 0.55;
       }
       .faq1-intro--light .faq1-intro__beam {
-        background: conic-gradient(from 180deg, rgba(15, 23, 42, 0.18), transparent 30%, rgba(71, 85, 105, 0.18) 58%, transparent 80%, rgba(15, 23, 42, 0.14));
+        background: conic-gradient(from 180deg, rgba(255, 255, 255, 0.6), transparent 30%, rgba(147, 197, 253, 0.5) 58%, transparent 80%, rgba(255, 255, 255, 0.4));
       }
       .faq1-intro__pulse {
         border: 1px solid currentColor;
@@ -194,7 +189,7 @@ export function FAQ1() {
         animation: faq1-tick 3.2s ease-in-out infinite;
       }
       .faq1-intro--light .faq1-intro__tick {
-        box-shadow: 0 0 0 4px rgba(15, 15, 15, 0.08);
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
       }
       .faq1-fade {
         opacity: 0;
@@ -332,35 +327,15 @@ export function FAQ1() {
         <header className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="space-y-4">
             <p className={`text-xs uppercase tracking-[0.35em] ${palette.muted}`}>Questions</p>
-            <h2 className={`text-4xl font-semibold leading-tight md:text-5xl ${palette.heading}`} style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h2 className={`text-4xl font-semibold leading-tight md:text-5xl ${palette.heading}`} style={{}}>
               Got questions? We've got answers.
             </h2>
-            <p className={`max-w-xl text-base ${palette.muted}`} style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            <p className={`max-w-xl text-base ${palette.muted}`} style={{}}>
               Everything you need to know about partnering with our team, right here.
             </p>
           </div>
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className={`relative inline-flex h-11 items-center gap-3 rounded-full border px-5 text-sm font-medium transition-colors duration-500 ${palette.toggleSurface} ${palette.toggle}`}
-            aria-pressed={theme === "dark" ? "true" : "false"}
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-          >
-            <span className="relative flex h-6 w-6 items-center justify-center">
-              <span
-                className={`pointer-events-none absolute inset-0 rounded-full border opacity-40 ${
-                  theme === "dark" ? "border-white/30 animate-pulse" : "border-neutral-400/50"
-                }`}
-              />
-              <span
-                className={`h-3 w-3 rounded-full transition-all duration-500 ${
-                  theme === "dark" ? "bg-white" : "bg-[#1D4ED8]"
-                }`}
-              />
-            </span>
-            {theme === "dark" ? "Night" : "Day"} mode
-          </button>
+
         </header>
 
         <ul className="space-y-4">
@@ -409,7 +384,7 @@ export function FAQ1() {
 
                   <div className="flex flex-1 flex-col gap-4">
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-                      <h2 className={`text-base font-medium leading-tight sm:text-lg ${palette.heading}`} style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      <h2 className={`text-base font-medium leading-tight sm:text-lg ${palette.heading}`} style={{}}>
                         {item.question}
                       </h2>
                       {item.meta && (
@@ -428,7 +403,7 @@ export function FAQ1() {
                       className={`overflow-hidden text-sm leading-relaxed transition-all duration-500 ease-out text-left ${
                         open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
                       } ${palette.muted}`}
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      style={{}}
                     >
                       <p className="pr-4 pb-2 m-0 text-left">
                         {item.answer}

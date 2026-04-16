@@ -47,20 +47,17 @@ export function Services() {
       {/* Top transition from white Hero */}
       <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#ffffff] to-transparent pointer-events-none z-0" />
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-[1D4ED8] to-[#3a3830] z-10" />
-
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <p
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#ffffff", fontWeight: 600, letterSpacing: "0.12em" }}
+            style={{ fontSize: "12px", color: "#ffffff", fontWeight: 600, letterSpacing: "0.12em" }}
             className="uppercase mb-4"
           >
             What We Offer
           </p>
           <h2
             style={{
-              fontFamily: "'Playfair Display', serif",
               fontSize: "clamp(34px, 4.5vw, 56px)",
               color: "#f5f0e8",
               fontWeight: 600,
@@ -85,7 +82,7 @@ export function Services() {
                 {s.tag && (
                   <span
                     className="absolute top-6 right-6 px-3 py-1 rounded-full bg-[#000000]/15 border border-[#9a9488]/30"
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#9a9488", fontWeight: 600 }}
+                    style={{ fontSize: "11px", color: "#9a9488", fontWeight: 600 }}
                   >
                     {s.tag}
                   </span>
@@ -98,14 +95,14 @@ export function Services() {
 
                 {/* Title */}
                 <h3
-                  style={{ fontFamily: "'Playfair Display', serif", fontSize: "22px", color: "#9a9488", fontWeight: 600 }}
+                  style={{ fontSize: "22px", color: "#9a9488", fontWeight: 600 }}
                   className="mb-3"
                 >
                   {s.title}
                 </h3>
 
                 {/* Desc */}
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#6a6560", lineHeight: 1.7 }}>
+                <p style={{ fontSize: "15px", color: "#6a6560", lineHeight: 1.7 }}>
                   {s.desc}
                 </p>
 

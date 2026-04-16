@@ -55,25 +55,22 @@ export function HowItWorks() {
           />
         </div>
 
-        {/* Bottom transition to Pricing (#0a0a08) */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#ffffff] to-transparent pointer-events-none z-10" />
+        {/* Bottom transition to Pricing (Removed to allow seamless blend) */}
 
         {/* Decorative rings layer (above background) */}
         <div className="absolute right-[-200px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-[#2a2820] opacity-40 pointer-events-none z-0" />
         <div className="absolute right-[-120px] top-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-[#f5c97a]/10 opacity-60 pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          {/* Header */}
           <div className="text-center mb-20">
             <p
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#fff1b5", fontWeight: 600, letterSpacing: "0.12em" }}
+              style={{ fontSize: "12px", color: "#FFD60A", fontWeight: 600, letterSpacing: "0.12em" }}
               className="uppercase mb-4"
             >
               How It Works
             </p>
             <h2
               style={{
-                fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(34px, 4.5vw, 56px)",
                 color: "#f5f0e8",
                 fontWeight: 600,
@@ -81,18 +78,18 @@ export function HowItWorks() {
               }}
             >
               Four simple steps to{" "}
-              <span style={{ fontStyle: "italic", color: "#fff1b5" }}>pure magic</span>
+              <span style={{ fontStyle: "italic", color: "#FFD60A" }}>pure magic</span>
             </h2>
           </div>
 
           {/* Steps */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Base Connecting line desktop */}
-            <div className="hidden lg:block absolute top-10 left-[12%] right-[12%] h-px bg-[#3a3830]" />
+            <div className="hidden lg:block absolute top-10 left-[12%] right-[12%] h-1.5 rounded-full bg-[#3a3830]/50 mt-[-2px]" />
 
             {/* Animated fill Connecting line desktop */}
             <motion.div
-              className="hidden lg:block absolute top-10 left-[12%] right-[12%] h-px bg-gradient-to-r from-[#f5c97a] to-[#e8804e] origin-left"
+              className="hidden lg:block absolute top-10 left-[12%] right-[12%] h-1.5 rounded-full bg-gradient-to-r from-[#FFD60A] to-[#e8804e] origin-left shadow-[0_0_15px_rgba(255,214,10,0.6)] mt-[-2px]"
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
             />
 
@@ -142,7 +139,6 @@ function StepItem({ step, index, progress }: { step: any; index: number; progres
         {/* Base text (inactive state) */}
         <span
           style={{
-            fontFamily: "'Playfair Display', serif",
             fontSize: "28px",
             fontWeight: 600,
             color: "#6a6560", // Dark gray when inactive
@@ -155,7 +151,6 @@ function StepItem({ step, index, progress }: { step: any; index: number; progres
         {/* Highlighted text (active state) fade-in over base text */}
         <motion.span
           style={{
-            fontFamily: "'Playfair Display', serif",
             fontSize: "28px",
             fontWeight: 600,
             background: "linear-gradient(135deg, #f5c97a 0%, #e8804e 100%)",
@@ -171,12 +166,12 @@ function StepItem({ step, index, progress }: { step: any; index: number; progres
       </div>
 
       <h3
-        style={{ fontFamily: "'Playfair Display', serif", fontSize: "20px", color: "#f5f0e8", fontWeight: 600 }}
+        style={{ fontSize: "20px", color: "#f5f0e8", fontWeight: 600 }}
         className="mb-3"
       >
         {step.title}
       </h3>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#6a6560", lineHeight: 1.7 }}>
+      <p style={{ fontSize: "15px", color: "#6a6560", lineHeight: 1.7 }}>
         {step.desc}
       </p>
     </div>

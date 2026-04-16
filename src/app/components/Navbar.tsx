@@ -67,7 +67,6 @@ export function Navbar() {
                 <a
                   href={`#${sectionId}`}
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "15px",
                     color: isActive ? "#f5c97a" : "#c9c4b8",
                     fontWeight: isActive ? 600 : 400,
@@ -86,7 +85,6 @@ export function Navbar() {
           href="#contact"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FFD60A] to-[#FFD60A] hover:opacity-90 transition-opacity duration-300"
           style={{
-            fontFamily: "'DM Sans', sans-serif",
             fontSize: "14px",
             color: "#0d0d0d",
             fontWeight: 600,
@@ -117,7 +115,6 @@ export function Navbar() {
                   <a
                     href={`#${sectionId}`}
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
                       fontSize: "16px",
                       color: isActive ? "#f5c97a" : "#c9c4b8",
                       fontWeight: isActive ? 600 : 400,
@@ -135,7 +132,6 @@ export function Navbar() {
                 href="#contact"
                 className="inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-[#f5c97a] to-[#e8804e]"
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "14px",
                   color: "#0d0d0d",
                   fontWeight: 600,

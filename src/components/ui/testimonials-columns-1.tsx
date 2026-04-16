@@ -30,7 +30,7 @@ export const TestimonialsColumn = (props: {
                   key={`${index}-${i}`}
                 >
                   <div 
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#2a2820", lineHeight: 1.6 }}
+                    style={{ fontSize: "15px", color: "#2a2820", lineHeight: 1.6 }}
                   >
                     "{text}"
                   </div>
@@ -43,10 +43,10 @@ export const TestimonialsColumn = (props: {
                       className="h-12 w-12 rounded-full object-cover border border-[#e8e4db]"
                     />
                     <div className="flex flex-col">
-                      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "16px", color: "#0d0d0d", fontWeight: 700 }} className="leading-tight">
+                      <div style={{ fontSize: "16px", color: "#0d0d0d", fontWeight: 700 }} className="leading-tight">
                         {name}
                       </div>
-                      <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#6a6560", fontWeight: 500 }} className="leading-tight mt-1">
+                      <div style={{ fontSize: "13px", color: "#6a6560", fontWeight: 500 }} className="leading-tight mt-1">
                         {role}
                       </div>
                     </div>

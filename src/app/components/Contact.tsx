@@ -4,12 +4,12 @@ import { Send, MapPin, Phone, Mail } from "lucide-react";
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    school: "",
     phone: "",
-    eventType: "",
+    eventType: "Yearbook",
     date: "",
-    guests: "",
-    message: "",
+    person: "",
+    message: "Halo Samasema, kami ingin membuat project buku tahunan yang kreatif dengan kalian! Konsep yang ingin kami tanyakan adalah ...",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -19,13 +19,33 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const message = `Halo Samasema! Kami tertarik untuk pembuatan Yearbook.
+    
+*Detail Kontak*
+Nama Lengkap: ${formData.name}
+Asal Sekolah: ${formData.school}
+No. WA: ${formData.phone}
+
+*Detail Event*
+Tipe Event: ${formData.eventType}
+Tanggal Pelaksanaan: ${formData.date}
+Jumlah Siswa (Person): ${formData.person}
+
+*Pesan/Konsep/Catatan Tambahan:*
+${formData.message}`;
+
+    const waNumber = "62895338381625";
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(waUrl, "_blank");
+
     setSubmitted(true);
   };
 
   const inputStyle = {
-    fontFamily: "'DM Sans', sans-serif",
     fontSize: "15px",
-    color: "#c9c4b8",
+    color: "#0d0d0d", // changed from #c9c4b8
     background: "#ffffff",
     border: "1px solid #2a2820",
     borderRadius: "12px",
@@ -35,9 +55,8 @@ export function Contact() {
   };
 
   const labelStyle = {
-    fontFamily: "'DM Sans', sans-serif",
     fontSize: "13px",
-    color: "#6a6560",
+    color: "#000000",
     fontWeight: 500,
     display: "block",
     marginBottom: "8px",
@@ -45,10 +64,9 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#FFD60A] pt-48 pb-28 relative overflow-hidden">
-      {/* Top transition from Testimonials (#FFD60A) */}
+    <section id="contact" className="bg-[#FFD60A] pt-24 pb-28 relative overflow-hidden">
+      {/* Top transition from Logos 3 (#FFD60A) */}
       <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#FFD60A] to-transparent pointer-events-none z-10" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2a2820] to-transparent relative z-20" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-20">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -57,7 +75,6 @@ export function Contact() {
 
             <h2
               style={{
-                fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(34px, 4.5vw, 56px)",
                 color: "#f5f0e8",
                 fontWeight: 600,
@@ -68,7 +85,7 @@ export function Contact() {
               <span style={{ fontStyle: "italic", color: "#1D4ED8" }}>unforgettable</span>
             </h2>
             <p
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#6a6560", lineHeight: 1.7 }}
+              style={{ fontSize: "16px", color: "#000000", lineHeight: 1.7 }}
               className="mt-6 mb-12"
             >
               Tell us about your event and we'll be in touch within 24 hours with a tailored proposal.
@@ -88,10 +105,10 @@ export function Contact() {
                       <Icon size={18} className="text-[#1D4ED8]" />
                     </div>
                     <div>
-                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#363331ff", letterSpacing: "0.06em" }} className="uppercase">
+                      <p style={{ fontSize: "12px", color: "#363331ff", letterSpacing: "0.06em" }} className="uppercase">
                         {item.label}
                       </p>
-                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#6a6560" }}>
+                      <p style={{ fontSize: "15px", color: "#000000" }}>
                         {item.value}
                       </p>
                     </div>
@@ -104,14 +121,14 @@ export function Contact() {
           {/* Right: form */}
           <div className="relative lg:mt-16">
             {submitted ? (
-              <div className="flex flex-col items-center justify-center text-center p-16 rounded-3xl border border-[#f5c97a]/30 bg-[#111109]">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#f5c97a] to-[#e8804e] flex items-center justify-center mb-6 text-4xl">
+              <div className="flex flex-col items-center justify-center text-center p-16 rounded-3xl border border-[#ffffff]/20 bg-[#1D4ED8]">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FFD60A] to-[#ffb800] flex items-center justify-center mb-6 text-4xl shadow-lg">
                   🎉
                 </div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "28px", color: "#f5f0e8", fontWeight: 600 }} className="mb-3">
+                <h3 style={{ fontSize: "28px", color: "#ffffff", fontWeight: 600 }} className="mb-3">
                   We'll be in touch!
                 </h3>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#6a6560", lineHeight: 1.7 }}>
+                <p style={{ fontSize: "16px", color: "#f8fafc", lineHeight: 1.7 }}>
                   Thanks for reaching out. A member of our team will respond within 24 hours.
                 </p>
               </div>
@@ -131,13 +148,13 @@ export function Contact() {
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Email Address</label>
+                    <label style={labelStyle}>Asal Sekolah</label>
                     <input
-                      name="email"
-                      type="email"
-                      value={formData.email}
+                      name="school"
+                      type="text"
+                      value={formData.school}
                       onChange={handleChange}
-                      placeholder="your@email.com"
+                      placeholder="Nama sekolah kamu"
                       required
                       style={inputStyle}
                       className="focus:border-[#f5c97a]/50 transition-colors placeholder:text-[#3a3830]"
@@ -160,21 +177,14 @@ export function Contact() {
                   </div>
                   <div>
                     <label style={labelStyle}>Event Type</label>
-                    <select
+                    <input
                       name="eventType"
+                      type="text"
                       value={formData.eventType}
-                      onChange={handleChange}
-                      required
-                      style={{ ...inputStyle, appearance: "none" }}
-                      className="focus:border-[#f5c97a]/50 transition-colors"
-                    >
-                      <option value="" disabled style={{ color: "#3a3830" }}>Select type</option>
-                      <option value="wedding">Wedding</option>
-                      <option value="corporate">Corporate Event</option>
-                      <option value="birthday">Birthday Party</option>
-                      <option value="gala">Charity Gala</option>
-                      <option value="other">Other</option>
-                    </select>
+                      readOnly
+                      title="Auto-filled for Yearbook projects"
+                      style={{ ...inputStyle, background: "#f0f0f0", color: "#000000", cursor: "not-allowed" }}
+                    />
                   </div>
                 </div>
 
@@ -191,11 +201,11 @@ export function Contact() {
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Estimated Guests</label>
+                    <label style={labelStyle}>Estimated Person</label>
                     <input
-                      name="guests"
+                      name="person"
                       type="number"
-                      value={formData.guests}
+                      value={formData.person}
                       onChange={handleChange}
                       placeholder="e.g. 150"
                       style={inputStyle}
@@ -211,7 +221,6 @@ export function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    placeholder="Venue, theme, special requirements..."
                     style={{ ...inputStyle, resize: "none" }}
                     className="focus:border-[#f5c97a]/50 transition-colors placeholder:text-[#3a3830]"
                   />
@@ -220,7 +229,7 @@ export function Contact() {
                 <button
                   type="submit"
                   className="group w-full py-4 rounded-full bg-gradient-to-r from-[#FFD60A] to-[#1D4ED8] hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3"
-                  style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#0d0d0d", fontWeight: 600 }}
+                  style={{ fontSize: "15px", color: "#0d0d0d", fontWeight: 600 }}
                 >
                   Send Enquiry
                   <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />

@@ -50,30 +50,29 @@ export function Gallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-4">
           <div>
             <p
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#282723ff", fontWeight: 600, letterSpacing: "0.12em" }}
+              style={{ fontSize: "18px", color: "#000000ff", fontWeight: 600, letterSpacing: "0.12em" }}
               className="uppercase mb-4"
             >
               Our Gallery
             </p>
             <h2
               style={{
-                fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(34px, 4.5vw, 56px)",
-                color: "#2a2820",
+                color: "#000000ff",
                 fontWeight: 600,
                 lineHeight: 1.15,
               }}
             >
               Moments we've{" "}
-              <span style={{ fontStyle: "italic", color: "#ffffff" }}>captured</span>
+              <span style={{ fontStyle: "italic", color: "#000000ff" }}>captured</span>
             </h2>
           </div>
           <a
             href="#contact"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#2a2820", fontWeight: 500 }}
-            className="flex items-center gap-2 hover:gap-3 transition-all duration-300 flex-shrink-0"
+            style={{ fontSize: "14px", fontWeight: 600 }}
+            className="bg-gradient-to-r from-[#FFD60A] to-[#1D4ED8] text-[#0d0d0d] border-4 border-[#ffffff] px-6 py-3 rounded-xl hover:opacity-90 transition-all duration-300 shadow-md hover:translate-y-[-2px] hover:shadow-lg inline-flex items-center gap-2 hover:gap-3 flex-shrink-0"
           >
-            View Full Portfolio →
+            View Full Portfolio
           </a>
         </div>
 
@@ -94,7 +93,7 @@ export function Gallery() {
               {/* Label */}
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
                 <span
-                  style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", color: "#f5f0e8", fontWeight: 500, fontStyle: "italic" }}
+                  style={{ fontSize: "18px", color: "#f5f0e8", fontWeight: 500, fontStyle: "italic" }}
                 >
                   {img.label}
                 </span>

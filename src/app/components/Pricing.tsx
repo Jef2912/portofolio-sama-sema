@@ -57,10 +57,8 @@ const sampleTiers: PricingTier[] = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-[#ffffff] py-32 relative overflow-hidden">
-      {/* Top Gradient for smooth transition from previous section */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#ffffff] to-transparent pointer-events-none z-10" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3a3830] to-transparent" />
+    <section id="pricing" className="bg-gradient-to-b from-[#0d0d0d] via-[#1D4ED8] to-[#FFD60A] py-32 relative overflow-hidden">
+      {/* Top Gradient for smooth transition from previous section (Removed) */}
 
       {/* Subtle background ambient glows */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none -z-0" />
@@ -70,9 +68,7 @@ export function Pricing() {
         <CreativePricing tiers={sampleTiers} />
       </div>
 
-      {/* Bottom Gradient for smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#ffffff] to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3a3830] to-transparent" />
+      {/* Bottom Gradient for smooth transition to next section (Removed) */}
     </section>
   );
 }

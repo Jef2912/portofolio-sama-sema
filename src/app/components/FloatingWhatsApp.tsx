@@ -73,7 +73,6 @@ export function FloatingWhatsApp() {
                 borderRadius: "12px",
                 padding: "10px 16px",
                 boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
-                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "13px",
                 color: "#1a1a1a",
                 whiteSpace: "nowrap",

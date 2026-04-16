@@ -95,23 +95,23 @@ function CreativePricing({
                                 >
                                     {tier.icon}
                                 </div>
-                                <h3 className="font-handwritten text-2xl font-bold text-[#9A9488]">
+                                <h3 className="font-handwritten text-2xl font-bold text-[#000000]">
                                     {tier.name}
                                 </h3>
-                                <p className="font-handwritten text-[#9a9488] mt-2">
+                                <p className="font-handwritten text-[#000000] mt-2">
                                     {tier.description}
                                 </p>
                             </div>
 
                             {/* Price */}
                             <div className="mb-6 font-handwritten flex items-baseline">
-                                <span className="text-4xl font-bold text-[#2a2820]">
+                                <span className="text-4xl font-bold text-[#000000]">
                                     {typeof tier.price === 'number'
                                         ? `Rp ${tier.price.toLocaleString('id-ID')}`
                                         : tier.price}
                                 </span>
                                 {tier.suffix && (
-                                    <span className="text-[#6a6560] ml-2 text-xl font-bold">
+                                    <span className="text-[#000000] ml-2 text-xl font-bold">
                                         {tier.suffix}
                                     </span>
                                 )}
@@ -129,7 +129,7 @@ function CreativePricing({
                                         >
                                             <Check className="w-3 h-3 text-[#f5c97a]" />
                                         </div>
-                                        <span className="font-handwritten text-lg text-[#d0cbc0]">
+                                        <span className="font-handwritten text-lg text-[#000000]">
                                             {feature}
                                         </span>
                                     </div>
